@@ -1,0 +1,169 @@
+type: collection.insomnia.rest/5.0
+name: Comment
+meta:
+  id: wrk_0223e03416154ce58b67087148f9504a
+  created: 1763310256637
+  modified: 1763310256637
+  description: ""
+collection:
+  - name: User
+    meta:
+      id: fld_eb37fd1d41864ea7891bf126aad8cfe3
+      created: 1763310598650
+      modified: 1763310598650
+      sortKey: -1763310598650
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}/:topicSlug"
+        name: Create comment
+        meta:
+          id: req_6861e7944db24badb41605d04ce14878
+          created: 1763310259638
+          modified: 1763310607710
+          isPrivate: false
+          description: ""
+          sortKey: -1763310604250
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"content": "Nice palms!"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_b1ba8e3814514ed0a161899cc18d5006
+          - id: pair_a6419d98a2164fbb928fc3807a62acbf
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: topicSlug
+            value: my-palms-1763310096310
+      - url: "{{ _.BaseURL.base_url }}/:commentId"
+        name: Update comment
+        meta:
+          id: req_4168de0a3c9e4cb8b7ffa7194128c737
+          created: 1763310440349
+          modified: 1763310605817
+          isPrivate: false
+          description: ""
+          sortKey: -1763310604150
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"content": "Such a wonderful palms!"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f1403861277442da8b387a7431353b32
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_1bf9348d82e94e14b6f0bc11f67193a8
+          - id: pair_b70f7002793348d6b56a484da3b52d89
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: commentId
+            value: 6919fb58d0683da5b6bfdae7
+      - url: "{{ _.BaseURL.base_url }}/:commentId"
+        name: Delete comment
+        meta:
+          id: req_30d1f0bc0b3047b3b3557ab265214947
+          created: 1763310529576
+          modified: 1763310604102
+          isPrivate: false
+          description: ""
+          sortKey: -1763310604050
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_97db738ad717425f80f5f9ac3407bedc
+          - id: pair_867933db89244b5f94095edc3b28209e
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: commentId
+            value: 6919fb58d0683da5b6bfdae7
+  - name: Public
+    meta:
+      id: fld_95a17349aef149779b03382167e290d3
+      created: 1763310615157
+      modified: 1763310615157
+      sortKey: -1763310615157
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}/:topicSlug"
+        name: Get all comments by topic
+        meta:
+          id: req_c9b85aee586f41aea4587a33ecbe2685
+          created: 1763310619874
+          modified: 1763310671523
+          isPrivate: false
+          description: ""
+          sortKey: -1763310619874
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: topicSlug
+            value: my-palms-1763310096310
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_131ef09e44255d66ac1dbb6a5c392cff0e6e74a9
+    created: 1763310256710
+    modified: 1763310256710
+environments:
+  name: Local Environment
+  meta:
+    id: env_131ef09e44255d66ac1dbb6a5c392cff0e6e74a9
+    created: 1763310256695
+    modified: 1763310354606
+    isPrivate: false
+  data:
+    BaseURL:
+      base_url: http://localhost:8080/api/v1/comments
+    AuthCookies:
+      auth_cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4ZWQ5M2U1Mzg4OWNhNDBkMjU4MWMiLCJpYXQiOjE3NjMyNDEzOTksImV4cCI6MTc2MzMyNzc5OX0.5LtVa1LUbbbMiHsPXELzy4WHJNG3xo5F2VTyRt21eD0;
+        Max-Age=86400; Path=/; Expires=Sun, 16 Nov 2025 21:16:39 GMT; HttpOnly;
+        SameSite=Lax

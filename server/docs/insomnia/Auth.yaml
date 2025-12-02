@@ -1,0 +1,321 @@
+type: collection.insomnia.rest/5.0
+name: Auth
+meta:
+  id: wrk_5ac94bb96ed34a62898ea3038c794c2a
+  created: 1763224976317
+  modified: 1763224976317
+  description: ""
+collection:
+  - name: GET
+    meta:
+      id: fld_49815839ae2b46c2b48025eda1a15b5a
+      created: 1763231413778
+      modified: 1763231413778
+      sortKey: -1763231413778
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/me"
+        name: Get ME (user info)
+        meta:
+          id: req_4386f4096aaa432583cacca8d9ad8a51
+          created: 1763227494349
+          modified: 1763231452653
+          isPrivate: false
+          description: ""
+          sortKey: -1763231444742
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/verify-email/:token"
+        name: Verify email
+        meta:
+          id: req_4f35ce256301462e99aab4aaff611d9b
+          created: 1763229668050
+          modified: 1763240872445
+          isPrivate: false
+          description: "Note: Token from register console log"
+          sortKey: -1763231444642
+        method: GET
+        body:
+          mimeType: application/json
+          text: '{"email": "admin@email.com"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: token
+            value: faeec82af7746f28ce3ccd68067b0be2e2dc6a752a41e5b9731488593af913a9
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/reset-password/:resetToken"
+        name: Show reset password form
+        meta:
+          id: req_4956d2db42c64cbb8d044a1ef8674661
+          created: 1763230703541
+          modified: 1763231444587
+          isPrivate: false
+          description: "Note: Returns HTML - open in browser."
+          sortKey: -1763231444542
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: resetToken
+            value: ""
+  - name: POST
+    meta:
+      id: fld_880a240f53754217b9e51c983d60f041
+      created: 1763231460337
+      modified: 1763231460337
+      sortKey: -1763231460337
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/register"
+        name: Register
+        meta:
+          id: req_733bd5242b514be6962d5c7fbb65aa9d
+          created: 1763224991542
+          modified: 1763240713952
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516882
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "username": "admin2",
+            "email": "admin@email.com",
+            "password": "Password123!"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/login"
+        name: Login
+        meta:
+          id: req_a6def92c9cb446da89f472ccd5deaade
+          created: 1763227334918
+          modified: 1763241384913
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516832
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "email": "admin@tropicario.com",
+            "password": "Admin123!"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/logout"
+        name: Logout
+        meta:
+          id: req_16993af9d2cd4e70bbe6011cf5ff7f69
+          created: 1763227432175
+          modified: 1763231646427
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516807
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/resend-verification"
+        name: Resend verification email
+        meta:
+          id: req_3ba8d8e71a1c4b359936623fa811eefd
+          created: 1763230447756
+          modified: 1763231630257
+          isPrivate: false
+          description: "Note: Check console for reset token."
+          sortKey: -1763231516582
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "email": "user2@mail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/forgot-password"
+        name: Forgot password
+        meta:
+          id: req_b2bde8d898284d4e9d4820acb2b5c844
+          created: 1763230574992
+          modified: 1763231648181
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516794.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"email": "user2@email.com"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/reset-password/:resetToken"
+        name: Reset password
+        meta:
+          id: req_aa206490506a474d9a686ddd2b38a924
+          created: 1763231255460
+          modified: 1763231633411
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516782
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"newPassword": "Newpassword123!"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: resetToken
+            value: ""
+      - url: "{{ _.BaseURL.base_url }}/api/v1/auth/change-password"
+        name: Change password
+        meta:
+          id: req_286537d0d68a426d959cc939d308fc12
+          created: 1763231516282
+          modified: 1763231653749
+          isPrivate: false
+          description: ""
+          sortKey: -1763231516682
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {"currentPassword": "Password123!",
+            "newPassword": "Newpassword123!"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e5ea41cf56a53db1bdac2864d162d6c21f80e1f8
+    created: 1763224976331
+    modified: 1763241399277
+  cookies:
+    - key: token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4ZWQ5M2U1Mzg4OWNhNDBkMjU4MWMiLCJpYXQiOjE3NjMyNDEzOTksImV4cCI6MTc2MzMyNzc5OX0.5LtVa1LUbbbMiHsPXELzy4WHJNG3xo5F2VTyRt21eD0
+      maxAge: 86400
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-11-15T17:21:35.059Z
+      lastAccessed: 2025-11-15T21:16:39.277Z
+      sameSite: lax
+      id: b57d6cfa-d4d8-494f-9e1a-62803a2fc1b6
+environments:
+  name: Local Environment
+  meta:
+    id: env_e5ea41cf56a53db1bdac2864d162d6c21f80e1f8
+    created: 1763224976323
+    modified: 1763227145577
+    isPrivate: false
+  data:
+    BaseURL:
+      base_url: http://localhost:8080

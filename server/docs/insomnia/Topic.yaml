@@ -1,0 +1,187 @@
+type: collection.insomnia.rest/5.0
+name: Topic
+meta:
+  id: wrk_5cee6e5695484bfca98670de4cdd42b5
+  created: 1763309287550
+  modified: 1763309287550
+  description: ""
+collection:
+  - name: User
+    meta:
+      id: fld_e02676cc638f4a808508271a85b443be
+      created: 1763310737209
+      modified: 1763310737209
+      sortKey: -1763310737209
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}"
+        name: Create Topic
+        meta:
+          id: req_f8f0b1aa80404642a3649019225d6aaa
+          created: 1763309298612
+          modified: 1763310743570
+          isPrivate: false
+          description: ""
+          sortKey: -1763310740264
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{"title": "My palms", "content": "Sample text", "threadSlug":
+            "trachycarpus-fortunei"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_56a1cf9528af4518993d98c21cd8a044
+          - id: pair_28c790fd1792417eab67f55cd98c2db6
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/:slug"
+        name: Update topic
+        meta:
+          id: req_b99b30afcd8e491094aec011a37a45f2
+          created: 1763309838109
+          modified: 1763310741775
+          isPrivate: false
+          description: ""
+          sortKey: -1763310740164
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"title": "My palms new title"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_d5edae023aa8457c997ede83fbffcc6e
+          - id: pair_c62e9799af524684bf79ac6c4cd9c406
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763309791664
+      - url: "{{ _.BaseURL.base_url }}/:slug"
+        name: Delete topic
+        meta:
+          id: req_4edbe3c07133472797025a229e371f08
+          created: 1763309972189
+          modified: 1763310740120
+          isPrivate: false
+          description: ""
+          sortKey: -1763310740064
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_67cbfb6fa745413eb2e7300bd964e002
+          - id: pair_bd3f7f3d576d456b8d4876f1df9edf19
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-new-title-1763309953205
+  - name: Public
+    meta:
+      id: fld_89949ab4c5b14d0e84beb0d0b3b17c2f
+      created: 1763310751049
+      modified: 1763310751049
+      sortKey: -1763310751049
+      description: ""
+    children:
+      - url: "{{ _.BaseURL.base_url }}"
+        name: Get all topics
+        meta:
+          id: req_972c896b72dd437497b23cc5a2e8ab09
+          created: 1763310070336
+          modified: 1763310769567
+          isPrivate: false
+          description: ""
+          sortKey: -1763310769524
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseURL.base_url }}/:slug"
+        name: Get single topic
+        meta:
+          id: req_c7189948cdef421fbb44982e7febdb13
+          created: 1763310153717
+          modified: 1763310771565
+          isPrivate: false
+          description: ""
+          sortKey: -1763310769624
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763310096310
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9cd7e0a2acd3ed8e12741819bb2d4073e2fa50e9
+    created: 1763309287577
+    modified: 1763309287577
+environments:
+  name: Local Environment
+  meta:
+    id: env_9cd7e0a2acd3ed8e12741819bb2d4073e2fa50e9
+    created: 1763309287564
+    modified: 1763310336168
+    isPrivate: false
+  data:
+    BaseURL:
+      base_url: http://localhost:8080/api/v1/topics
+    AuthCookies:
+      auth_cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4ZWQ5M2U1Mzg4OWNhNDBkMjU4MWMiLCJpYXQiOjE3NjMyNDEzOTksImV4cCI6MTc2MzMyNzc5OX0.5LtVa1LUbbbMiHsPXELzy4WHJNG3xo5F2VTyRt21eD0;
+        Max-Age=86400; Path=/; Expires=Sun, 16 Nov 2025 21:16:39 GMT; HttpOnly;
+        SameSite=Lax

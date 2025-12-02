@@ -1,0 +1,672 @@
+type: collection.insomnia.rest/5.0
+name: Admin
+meta:
+  id: wrk_c4f7c40ee4b8449aab1ed4592bfc728c
+  created: 1763240191025
+  modified: 1763240191025
+  description: ""
+collection:
+  - name: Section
+    meta:
+      id: fld_ff9102aa8bf5420197245d539d8f58bb
+      created: 1763241663467
+      modified: 1763241663467
+      sortKey: -1763241663467
+      description: ""
+    children:
+      - url: http://localhost:8080/api/v1/sections
+        name: Create section
+        meta:
+          id: req_e48312f800dc4238baec421e775748e0
+          created: 1763241455589
+          modified: 1763311585577
+          isPrivate: false
+          description: ""
+          sortKey: -1763241668565
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "title": "Cacti",
+            	"description": "Just cacti"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_10fa089f359f437381ba671236d7a427
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_4fee7212d103448d8d759e619220bb11
+          - id: pair_634face59b0b479a824ca0b217bacbd8
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/sections/:sectionId
+        name: Update section
+        meta:
+          id: req_fc40394bf1b2466ea8bab00f7e669463
+          created: 1763241866880
+          modified: 1763242256595
+          isPrivate: false
+          description: ""
+          sortKey: -1763241866880
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"title": "Palms and Cacti"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_49be18ec6d204669a19906a30f8ec96f
+          - id: pair_d9d4702e20904ae19b9be75708ec58ed
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: sectionId
+            value: 6918ee955315fd5c1ae2355b
+      - url: http://localhost:8080/api/v1/sections/:sectionId
+        name: Delete section
+        meta:
+          id: req_c4215a569553485a8f5f0e6b2d896b33
+          created: 1763242562146
+          modified: 1763242603940
+          isPrivate: false
+          description: ""
+          sortKey: -1763242562146
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_0cbfa0078a01437daf342ebfa71fdf9c
+          - id: pair_85dffae826044d088c91edd5ec73c57d
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: sectionId
+            value: 6918ee955315fd5c1ae2355b
+  - name: Thread
+    meta:
+      id: fld_a2f1e2933af04370a7a31ea3de6c408f
+      created: 1763243149695
+      modified: 1763243149695
+      sortKey: -1763243149695
+      description: ""
+    children:
+      - url: http://localhost:8080/api/v1/threads
+        name: Create thread
+        meta:
+          id: req_a73eebb88fef4b82b45af557a04f63b1
+          created: 1763308313783
+          modified: 1763312142508
+          isPrivate: false
+          description: ""
+          sortKey: -1763308313783
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "title": "Phoenix Canariensis",
+            	"description": "Phoenix description",
+            	"sectionSlug": "palms"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_d95c42b6c69e4e7bb36e8ca49f635550
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_7ebdc2c19e3349f8b5fef659237051e2
+          - id: pair_9986ae0127a147e69f40ea8078a09555
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/threads/:threadId
+        name: Update thread
+        meta:
+          id: req_4ecdf2a62a7540d7bf8e84d8406f7ac7
+          created: 1763308580156
+          modified: 1763308687346
+          isPrivate: false
+          description: ""
+          sortKey: -1763308580156
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "title": "Trachycarpus Wagnerianus"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_177600b57526470388f33d7dcd42337e
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_fa2c3cc31997488c93a08d3a806ed82d
+          - id: pair_8c171db173f9463291966606608c5791
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: threadId
+            value: 6919f3ff5eefa669eb71212b
+      - url: http://localhost:8080/api/v1/threads/:threadId
+        name: Delete thread
+        meta:
+          id: req_dc43c676a51d45bab7c8ebde1bd9059c
+          created: 1763308718344
+          modified: 1763308761061
+          isPrivate: false
+          description: ""
+          sortKey: -1763308718344
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_10d99a958c55470c8801efbf916b3577
+          - id: pair_bd42ceb925fa43b6944176fbf57eb489
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: threadId
+            value: 6919f3ff5eefa669eb71212b
+      - url: http://localhost:8080/api/v1/admin/threads/:slug/move
+        name: Move thread
+        meta:
+          id: req_0386c9a2b4df43978cd5623fc9a66ca2
+          created: 1763311413895
+          modified: 1763311633217
+          isPrivate: false
+          description: ""
+          sortKey: -1763311413895
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"newSectionId": "6919ffe3e99f824455c4f816"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_27b413b18ca94412af3edf71001382fa
+          - id: pair_f77bcc271bcc46d7b7458281ce904ec4
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: trachycarpus-fortunei
+  - name: Users
+    meta:
+      id: fld_4fdbe81091744afc8ecc1f047e8119a6
+      created: 1763310798387
+      modified: 1763310798387
+      sortKey: -1763310798387
+      description: ""
+    children:
+      - url: http://localhost:8080/api/v1/admin/users
+        name: Get all users
+        meta:
+          id: req_9b4c33e022ab480c8deb0c2067ebe343
+          created: 1763310804036
+          modified: 1763310858782
+          isPrivate: false
+          description: ""
+          sortKey: -1763310804036
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_7b19421ee5544a049edcc64f0ac96184
+          - id: pair_64ceedef908f456285fff0b919dfae6c
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/admin/users/:userId
+        name: Get single user
+        meta:
+          id: req_771f944194cc4a918c83c54ef97559e6
+          created: 1763311068474
+          modified: 1763311112599
+          isPrivate: false
+          description: ""
+          sortKey: -1763311068474
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_bcc00798bb304db1b1f1bff4380f5897
+          - id: pair_3f70f54fa8ad49cbb6686e730b699923
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: userId
+            value: 6903ac5ef51f7cf03d4f2fcd
+      - url: http://localhost:8080/api/v1/admin/users/:userId/ban
+        name: Ban user
+        meta:
+          id: req_252ace9a661942a4910442423d799d1d
+          created: 1763311171914
+          modified: 1763311244227
+          isPrivate: false
+          description: ""
+          sortKey: -1763311171914
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_042ade1799b34155bf9502658d6a28f2
+          - id: pair_9a0a4438cfac44f4a5b6970361bc0093
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: userId
+            value: 6903ac5ef51f7cf03d4f2fcd
+      - url: http://localhost:8080/api/v1/admin/users/:userId/unban
+        name: Unban user
+        meta:
+          id: req_0ba9d45143f34eab83cae92cbbb86bcf
+          created: 1763311272004
+          modified: 1763311319164
+          isPrivate: false
+          description: ""
+          sortKey: -1763311272004
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_8ac6233e5383412496eb285189ec5489
+          - id: pair_53d06bcc0cb044f680d45f4ce7029a57
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: userId
+            value: 6903ac5ef51f7cf03d4f2fcd
+      - url: http://localhost:8080/api/v1/admin/users/:userId
+        name: Delete user (soft delete)
+        meta:
+          id: req_cc8a34913a42475c8ac433449d35e893
+          created: 1763311342275
+          modified: 1763311391976
+          isPrivate: false
+          description: ""
+          sortKey: -1763311342275
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_82fdd8626b114a2c8bc89de149ddd201
+          - id: pair_9dee13ba5be7416dad6bb74aedfd1725
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: userId
+            value: 6903ac5ef51f7cf03d4f2fcd
+  - name: Topic
+    meta:
+      id: fld_a8180347cfb247439446fbab226efdb2
+      created: 1763311665315
+      modified: 1763311665315
+      sortKey: -1763311665315
+      description: ""
+    children:
+      - url: http://localhost:8080/api/v1/admin/topics/:slug/pin
+        name: Pin topic
+        meta:
+          id: req_344498f0520349389c8211d8c121200f
+          created: 1763311670334
+          modified: 1763311850298
+          isPrivate: false
+          description: ""
+          sortKey: -1763311670334
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_1f9d47ac21db404093f1f8122c6f024c
+          - id: pair_1beb4dc5131840058175b6e0dbce94b4
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763311820430
+      - url: http://localhost:8080/api/v1/admin/topics/:slug/unpin
+        name: Unpin topic
+        meta:
+          id: req_e13f7ca870c84ccd9ae730dbd531c450
+          created: 1763311874599
+          modified: 1763311916211
+          isPrivate: false
+          description: ""
+          sortKey: -1763311874599
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_f69f7db89b0a44a2ae25ec03958e5a3c
+          - id: pair_895f1a055c9541e39dbb805cd3fc74c8
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763311820430
+      - url: http://localhost:8080/api/v1/admin/topics/:slug/lock
+        name: Lock topic
+        meta:
+          id: req_4c23bbf475f24b40bca61a12b5ed3238
+          created: 1763311936478
+          modified: 1763312009068
+          isPrivate: false
+          description: ""
+          sortKey: -1763311936478
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_6af41153305e4b64806f617cd9d2b96d
+          - id: pair_39be4b76acc74eb5bdcfdba01ddc71cc
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763311820430
+      - url: http://localhost:8080/api/v1/admin/topics/:slug/unlock
+        name: Unlock topic
+        meta:
+          id: req_63a502d8f63c42fdaf1a19d68376161e
+          created: 1763312021836
+          modified: 1763312056731
+          isPrivate: false
+          description: ""
+          sortKey: -1763312021836
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_63c193234a96495baf753b27564a6598
+          - id: pair_248d645d5a5442cf93004fc08b442c94
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763311820430
+      - url: http://localhost:8080/api/v1/admin/topics/:slug/move
+        name: Move topic
+        meta:
+          id: req_497ca116963c4f7488191ed4c41b08a5
+          created: 1763312076020
+          modified: 1763312176190
+          isPrivate: false
+          description: ""
+          sortKey: -1763312076020
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: '{"newThreadId": "691a0213e99f824455c4f840"}'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_80bcaf7044914cda97e51dc9fae7e2bb
+          - id: pair_350a1751582f4cdd907e579ad6413aed
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: my-palms-1763311820430
+  - name: Comment
+    meta:
+      id: fld_14487e1c79bc4d5099ab7a5877b9f4ca
+      created: 1763312224498
+      modified: 1763312224498
+      sortKey: -1763312224498
+      description: ""
+    children:
+      - url: http://localhost:8080/api/v1/admin/comments/:commentId/pin
+        name: Pin comment
+        meta:
+          id: req_baa709658c7a488eb734d211563cb2cd
+          created: 1763312235731
+          modified: 1763312294744
+          isPrivate: false
+          description: ""
+          sortKey: -1763312235731
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_fa32f67276a749c9b3c5a53c65cd5275
+          - id: pair_7fe5901af5bb4e308211d04e90b49737
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: commentId
+            value: 6919fbeed0683da5b6bfdafb
+      - url: http://localhost:8080/api/v1/admin/comments/:commentId/unpin
+        name: Unpin comment
+        meta:
+          id: req_3cc628c8d6a74868b8d7df829315ff9f
+          created: 1763312307753
+          modified: 1763312313316
+          isPrivate: false
+          description: ""
+          sortKey: -1763312155875.5
+        method: PATCH
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+            id: pair_fa32f67276a749c9b3c5a53c65cd5275
+          - id: pair_7fe5901af5bb4e308211d04e90b49737
+            name: Cookie
+            value: "{{ _.AuthCookies.auth_cookie }}"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: commentId
+            value: 6919fbeed0683da5b6bfdafb
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_73cd868b1c44d4c007b44aafcdb79c9d9b00ad76
+    created: 1763240191038
+    modified: 1763240191038
+environments:
+  name: Base Environment
+  meta:
+    id: env_73cd868b1c44d4c007b44aafcdb79c9d9b00ad76
+    created: 1763240191035
+    modified: 1763241612789
+    isPrivate: false
+  data:
+    AuthCookies:
+      auth_cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4ZWQ5M2U1Mzg4OWNhNDBkMjU4MWMiLCJpYXQiOjE3NjMyNDEzOTksImV4cCI6MTc2MzMyNzc5OX0.5LtVa1LUbbbMiHsPXELzy4WHJNG3xo5F2VTyRt21eD0;
+        Max-Age=86400; Path=/; Expires=Sun, 16 Nov 2025 21:16:39 GMT; HttpOnly;
+        SameSite=Lax

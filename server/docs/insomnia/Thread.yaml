@@ -1,0 +1,72 @@
+type: collection.insomnia.rest/5.0
+name: Thread
+meta:
+  id: wrk_832ccda6ad744672b223a141b2aa0a9d
+  created: 1763308790466
+  modified: 1763308790466
+  description: ""
+collection:
+  - url: http://localhost:8080/api/v1/threads
+    name: Get all threads (filterable by section)
+    meta:
+      id: req_2e1e722ccab24dc991397af843fbe05c
+      created: 1763308800556
+      modified: 1763309017480
+      isPrivate: false
+      description: ""
+      sortKey: -1763308800556
+    method: GET
+    parameters:
+      - id: pair_de823400d41c42d494e95fb4b4162d3e
+        name: sectionSlug
+        value: palms
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/threads/:slug
+    name: Get single thread
+    meta:
+      id: req_f80dbd67452a48928b69ef5a36bdfcff
+      created: 1763309022792
+      modified: 1763309108614
+      isPrivate: false
+      description: ""
+      sortKey: -1763309022792
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+    pathParameters:
+      - name: slug
+        value: trachycarpus-fortunei
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7d2b063154f023ed51422d9c273b8d76c16e96a6
+    created: 1763308790510
+    modified: 1763308790510
+environments:
+  name: Base Environment
+  meta:
+    id: env_7d2b063154f023ed51422d9c273b8d76c16e96a6
+    created: 1763308790500
+    modified: 1763308790500
+    isPrivate: false

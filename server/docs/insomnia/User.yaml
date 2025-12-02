@@ -1,0 +1,149 @@
+type: collection.insomnia.rest/5.0
+name: User
+meta:
+  id: wrk_9564d3b418f64677b340fcab7b9db97f
+  created: 1763231672484
+  modified: 1763231672484
+  description: ""
+collection:
+  - url: "{{ _.BaseURL.base_url }}/profile"
+    name: "Update user "
+    meta:
+      id: req_1b51082fc0ac4d0fbf9784973ee16b06
+      created: 1763231690623
+      modified: 1763238295727
+      isPrivate: false
+      description: ""
+      sortKey: -1763231690623
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: '{"username":"New_user"}'
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_54bcc566b2ae4d3ebe96ff766a785878
+      - name: User-Agent
+        value: insomnia/12.0.0
+        id: pair_cfe154a97531403c897abd23400b12f0
+      - id: pair_6493efe61165407d9fcab759cbf1be40
+        name: Cookie
+        value: "{{ _.AuthCookie.auth_cookie }}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.BaseURL.base_url }}/profile/disable"
+    name: Disable account (soft delete)
+    meta:
+      id: req_ebe5c4cb36f04880ac642fcd25a635b4
+      created: 1763238348137
+      modified: 1763238451811
+      isPrivate: false
+      description: ""
+      sortKey: -1763238348137
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: '{"password": "Password123!"}'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+        id: pair_309155a45c4d47b1b93a98f211a150e1
+      - id: pair_f36b2071488f4b9d8bc8320bda1ab27b
+        name: Cookie
+        value: "{{ _.AuthCookie.auth_cookie }}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.BaseURL.base_url }}/avatar"
+    name: Upload avatar
+    meta:
+      id: req_d00ca11367d8457c9b6f27758a70aae4
+      created: 1763238510038
+      modified: 1763238601483
+      isPrivate: false
+      description: ""
+      sortKey: -1763238510038
+    method: PATCH
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_b1d2367088fc44938f514dc7a5284813
+          name: avatar
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: C:\Users\Milos\Pictures\Screenshots\Screenshot 2025-11-14 080939.png
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_66a257db3abf4606a0320719880ef460
+      - name: User-Agent
+        value: insomnia/12.0.0
+        id: pair_0b6f4eb99be74d878a3994b328193260
+      - id: pair_356fd65f225845829cfa13f2e8dfc273
+        name: Cookie
+        value: "{{ _.AuthCookie.auth_cookie }}"
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5f10821ce9d740e7539a1d745b3f602b176d08bf
+    created: 1763231672515
+    modified: 1763238454000
+  cookies:
+    - key: foo
+      value: bar
+      domain: domain.com
+      path: /
+      creation: 2025-11-15T20:27:33.996Z
+      id: 912bf7fe-3fdb-4bb0-bade-6356b1d67688
+    - key: token
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-11-15T20:27:33.999Z
+      lastAccessed: 2025-11-15T20:27:33.999Z
+      sameSite: lax
+      id: 9b12fb82-35bd-432b-a020-4d18ef8a42e5
+environments:
+  name: Local Environment
+  meta:
+    id: env_5f10821ce9d740e7539a1d745b3f602b176d08bf
+    created: 1763231672509
+    modified: 1763238277797
+    isPrivate: false
+  data:
+    BaseURL:
+      base_url: http://localhost:8080/api/v1/users
+    AuthCookie:
+      auth_cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4YjY5ZThmZGIwOGYxNmZkMGQ0MmEiLCJpYXQiOjE3NjMyMzIxMDMsImV4cCI6MTc2MzMxODUwM30.ANzL1RgUuk-Or7dHtM1TuNYxB-FrM8v-ibVXNn0wRV8;
+        Max-Age=86400; Path=/; Expires=Sun, 16 Nov 2025 18:41:43 GMT; HttpOnly;
+        SameSite=Lax

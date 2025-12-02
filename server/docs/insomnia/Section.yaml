@@ -1,0 +1,71 @@
+type: collection.insomnia.rest/5.0
+name: Section
+meta:
+  id: wrk_9c19627f0ee44b498c2b5b6aaaa3bdfa
+  created: 1763238916091
+  modified: 1763238916091
+  description: ""
+collection:
+  - url: "{{ _.BaseURL.base_url }}"
+    name: Get all sections
+    meta:
+      id: req_4c3d0bd4b3ce4f5b9055918125f2ee68
+      created: 1763239134297
+      modified: 1763239396779
+      isPrivate: false
+      description: ""
+      sortKey: -1763239134297
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+        id: pair_103f725875104050bfef7537a367efde
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.BaseURL.base_url }}/palms"
+    name: Get single section
+    meta:
+      id: req_2a5dac6d40d047198deff67504706945
+      created: 1763239452574
+      modified: 1763241644695
+      isPrivate: false
+      description: ""
+      sortKey: -1763239452574
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_3347896ee8344bcfa1827d9047c769403e3624a7
+    created: 1763238916128
+    modified: 1763238916128
+environments:
+  name: Local Environment
+  meta:
+    id: env_3347896ee8344bcfa1827d9047c769403e3624a7
+    created: 1763238916104
+    modified: 1763239348538
+    isPrivate: false
+  data:
+    BaseURL:
+      base_url: http://localhost:8080/api/v1/sections
+    AuthCookies:
+      auth_cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE4YzE3Yzc1M2M2MTc5YmY0ZWI5NWYiLCJpYXQiOjE3NjMyMzkzMTAsImV4cCI6MTc2MzMyNTcxMH0.qq78MyWM7ydsq2R7ySqIyuu2rihUBJx96_iXLKYrljk;
+        Max-Age=86400; Path=/; Expires=Sun, 16 Nov 2025 20:41:50 GMT; HttpOnly;
+        SameSite=Lax
