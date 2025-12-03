@@ -370,6 +370,11 @@ export const deleteTopic = async (
       Thread.findByIdAndUpdate(topic.thread, { $inc: { topicsCount: -1 } }),
     ]);
 
+    // Decrement user's topics count
+    await User.findByIdAndUpdate(req.user!.id, {
+      $inc: { postsCount: -1 },
+    });
+
     res.status(200).json({
       success: true,
       message: "Topic deleted successfully",
