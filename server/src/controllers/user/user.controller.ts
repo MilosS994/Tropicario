@@ -20,7 +20,7 @@ export const getUserProfile = async (
 
     // Find user
     const user = await User.findOne({ username }).select(
-      "username avatar fullName bio location role createdAt lastActive postsCount"
+      "username avatar fullName bio location age role createdAt lastActive postsCount"
     );
 
     // Check if user doesn't exist
